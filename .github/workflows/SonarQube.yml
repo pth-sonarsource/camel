@@ -35,4 +35,5 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          MAVEN_OPTS: "-Xmx4g"
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=pth_camel -Dsonar.organization=pth -DskipTests -Dsonar.inclusions=**/*.java -Dsonar.log.level=TRACE
